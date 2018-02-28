@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/login_student"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/login_student_avalayout"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dip"/>
+
+    <include
+        android:id="@+id/login_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        layout="@layout/login_teacher_avalayout"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dip"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <RadioButton
+            android:id="@+id/radioStudent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:fontFamily="serif-monospace"
+            android:onClick="onLoginTypeChecked"
+            android:text="student"
+            android:textStyle="bold"
+            android:textColor="@color/cardview_dark_background"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+        <RadioButton
+            android:id="@+id/radioTeacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif-monospace"
+            android:onClick="onLoginTypeChecked"
+            android:text="staff"
+            android:textStyle="bold"
+            android:layout_marginLeft="40dip"
+            android:textColor="@color/cardview_dark_background"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="username"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_dark_background"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="10dip"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"
+        android:textAlignment="center"
+        android:inputType="textPassword"
+        android:textColor="@color/cardview_dark_background"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:fontFamily="serif-monospace"
+        android:layout_marginTop="10dip"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dip"/>
+</LinearLayout>
