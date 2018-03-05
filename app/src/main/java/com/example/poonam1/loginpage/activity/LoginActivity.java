@@ -1,16 +1,17 @@
-package com.example.poonam1.loginpage;
+package com.example.poonam1.loginpage.activity;
 
 import android.content.res.Configuration;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.poonam1.loginpage.R;
 
 public class LoginActivity extends AppCompatActivity {
     private View teacherView;

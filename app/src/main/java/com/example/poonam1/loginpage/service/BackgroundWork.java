@@ -1,4 +1,4 @@
-package com.example.poonam1.loginpage;
+package com.example.poonam1.loginpage.service;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -27,7 +27,7 @@ public class BackgroundWork
     {
         Context context;
         AlertDialog alertDialog;
-        BackgroundWork (Context ctx) {
+        public BackgroundWork(Context ctx) {
             context = ctx;
         }
         @Override
