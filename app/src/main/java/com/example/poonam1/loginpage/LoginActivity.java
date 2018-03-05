@@ -1,16 +1,28 @@
 package com.example.poonam1.loginpage;
 
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
     private View teacherView;
     private View studentView;
+    private static final String mIsTeacher = "teacher";
+    private static final String mIsStudent = "student";
+    private static final String INVALID_CREDENTIALS ="Invalid Credentials";
+    private static final String INVALID_INPUT ="Invalid input";
+    private String mLoginTypeIs = null;
+    private String mUsername = null,mUserpass=null;
+    private String mLOG_TAG = LoginActivity.class.getSimpleName();
+    private String mPopMessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,19 +32,48 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    /**
+     * To swap the images of the teacher and the student.
+     * @param view
+     */
     public void onLoginTypeChecked(View view) {
         boolean checked = ((RadioButton) view).isChecked();
         switch(view.getId()) {
             case R.id.radioStudent:
                 if (checked)
+                    mLoginTypeIs = mIsStudent;
                     teacherView.setVisibility(View.GONE);
                     studentView.setVisibility(View.VISIBLE);
                     break;
             case R.id.radioTeacher:
                 if (checked)
+                    mLoginTypeIs = mIsTeacher;
                     studentView.setVisibility(View.GONE);
                     teacherView.setVisibility(View.VISIBLE);
                     break;
+        }
+    }
+
+    /**
+     * When the user presses the login button.
+     * @param view
+     */
+    public void onLoginClicked(View view){
+        Log.d(mLOG_TAG,"----------> Logging in as a "+ mLoginTypeIs);
+        if(mLoginTypeIs !=null){
+            EditText mtextViewUserName = (EditText) findViewById(R.id.username);
+            EditText mtextViewUserPass = (EditText) findViewById(R.id.username);
+            mUsername = mtextViewUserName.getText().toString();
+            mUserpass = mtextViewUserPass.getText().toString();
+            if (mUsername!=null && mUserpass!=null) {
+                if(!(mUsername.isEmpty() || mUserpass.isEmpty())){
+                    new AuthenticateCredentials(this).execute(mUsername,mUserpass,mLoginTypeIs);
+                }
+                else{
+                    mPopMessage = INVALID_INPUT;
+                    Toast.makeText(getApplicationContext(),mPopMessage,Toast.LENGTH_SHORT).show();
+                }
+            }
         }
     }
 
@@ -79,6 +120,22 @@ public class LoginActivity extends AppCompatActivity {
                 studentView.setLayoutParams(layoutParams);
                 studentView.setVisibility(View.VISIBLE);
             }
+        }
+    }
+
+    /**
+     * To establish connection and authenticate credentials
+     */
+    private static class AuthenticateCredentials extends AsyncTask<String,String,String>{
+        private String mLOG_TAG = AuthenticateCredentials.class.getSimpleName();
+        public AuthenticateCredentials(LoginActivity loginActivity) {
+
+        }
+
+        @Override
+        protected String doInBackground(String... strings) {
+            Log.d(mLOG_TAG,"---------> mUsername : "+strings[0]+" mUserpass :"+strings[1]+" mLoginTypeIs"+strings[2]);
+            return null;
         }
     }
 }
