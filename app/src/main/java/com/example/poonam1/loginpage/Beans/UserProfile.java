@@ -8,7 +8,9 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class UserProfile {
-
+    @SerializedName("response")
+    @Expose
+    private String response;
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -85,5 +87,22 @@ public class UserProfile {
 
     public void setMentor(String mentor) {
         this.mentor = mentor;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+
+    @Override
+    public String toString() {
+        return UserProfile.class.getSimpleName()+"{"+
+                "response : "+response+  "id : "+id+"username : "+username+"type : "+
+                type+"regNo : "+regNo+"name : "+name+"department : "+department+
+                "mentor : "+mentor+"}";
     }
 }

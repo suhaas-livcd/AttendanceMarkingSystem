@@ -10,11 +10,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
-import com.example.poonam1.loginpage.Beans.UserCredentials;
+import com.example.poonam1.loginpage.Beans.ListUserProfiles;
 import com.example.poonam1.loginpage.Beans.UserProfile;
 import com.example.poonam1.loginpage.R;
 import com.example.poonam1.loginpage.rest.APIService;
 import com.example.poonam1.loginpage.rest.ApiUtils;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -98,18 +100,20 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void sendPost(String mUsername, String mUserpass,String mLoginTypeIs) {
-        mAPIService.authenticateUser(mUsername, mUserpass, mLoginTypeIs).enqueue(new Callback<UserCredentials>() {
+        mAPIService.authenticateUser(mUsername, mUserpass, mLoginTypeIs).enqueue(new Callback<ListUserProfiles>() {
             @Override
-            public void onResponse(Call<UserCredentials> call, Response<UserCredentials> response) {
+            public void onResponse(Call<ListUserProfiles> call, Response<ListUserProfiles> response) {
 
                 if(response.isSuccessful()) {
                     showResponse(response.body().toString());
-                    Log.i(mLOG_TAG, "post submitted to API." + response.body().toString());
+                    List<UserProfile> muserProfiles = response.body().getResults();
+                    Log.i(mLOG_TAG, "post submitted to API." + muserProfiles.get(0).toString() + muserProfiles.get(0).getName());
+
                 }
             }
 
             @Override
-            public void onFailure(Call<UserCredentials> call, Throwable t) {
+            public void onFailure(Call<ListUserProfiles> call, Throwable t) {
                 Log.e(mLOG_TAG, "Unable to submit post to API.");
             }
         });
