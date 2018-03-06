@@ -1,7 +1,6 @@
 package com.example.poonam1.loginpage.activity;
 
 import android.content.res.Configuration;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -11,7 +10,15 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.example.poonam1.loginpage.Beans.UserCredentials;
+import com.example.poonam1.loginpage.Beans.UserProfile;
 import com.example.poonam1.loginpage.R;
+import com.example.poonam1.loginpage.rest.APIService;
+import com.example.poonam1.loginpage.rest.ApiUtils;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
     private View teacherView;
@@ -24,12 +31,20 @@ public class LoginActivity extends AppCompatActivity {
     private String mUsername = null,mUserpass=null;
     private String mLOG_TAG = LoginActivity.class.getSimpleName();
     private String mPopMessage;
+    //RetroAPI
+    private String mRetroResponse;
+    private APIService mAPIService;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         teacherView = findViewById(R.id.login_teacher);
         studentView = findViewById(R.id.login_student);
+
+        //Retro
+        mAPIService = ApiUtils.getAPIService();
     }
 
 
@@ -68,7 +83,11 @@ public class LoginActivity extends AppCompatActivity {
             mUserpass = mtextViewUserPass.getText().toString();
             if (mUsername!=null && mUserpass!=null) {
                 if(!(mUsername.isEmpty() || mUserpass.isEmpty())){
-                    new AuthenticateCredentials(this).execute(mUsername,mUserpass,mLoginTypeIs);
+//                    new AuthenticateCredentials(this).execute(mUsername,mUserpass,mLoginTypeIs);
+
+                    //Retro Connection
+                    sendPost(mUsername,mUserpass,mLoginTypeIs);
+
                 }
                 else{
                     mPopMessage = INVALID_INPUT;
@@ -76,6 +95,29 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         }
+    }
+
+    public void sendPost(String mUsername, String mUserpass,String mLoginTypeIs) {
+        mAPIService.authenticateUser(mUsername, mUserpass, mLoginTypeIs).enqueue(new Callback<UserCredentials>() {
+            @Override
+            public void onResponse(Call<UserCredentials> call, Response<UserCredentials> response) {
+
+                if(response.isSuccessful()) {
+                    showResponse(response.body().toString());
+                    Log.i(mLOG_TAG, "post submitted to API." + response.body().toString());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserCredentials> call, Throwable t) {
+                Log.e(mLOG_TAG, "Unable to submit post to API.");
+            }
+        });
+    }
+
+
+    public void showResponse(String response) {
+        Toast.makeText(getApplicationContext(),response,Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -124,22 +166,4 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * To establish connection and authenticate credentials
-     */
-    private static class AuthenticateCredentials extends AsyncTask<String,String,String>{
-        private String mLOG_TAG = AuthenticateCredentials.class.getSimpleName();
-        public AuthenticateCredentials(LoginActivity loginActivity) {
-
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-            Log.d(mLOG_TAG,"---------> |AUTH|\tmUsername : "+strings[0]+"\tmUserpass : "
-                    +strings[1]+"\tmLoginTypeIs : "+strings[2]);
-
-
-            return null;
-        }
-    }
 }
