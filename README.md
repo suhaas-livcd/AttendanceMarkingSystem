@@ -3,7 +3,7 @@ Web link at http://trackattendance.org/
 
 ## Screenshots
  <p align="center">
-  <img src="https://github.com/suhaas-livcd/AttendanceMarkingSystem/blob/master/Screenshots/LoginActivity.gif" width="256" title="Login Activity">
+  <img src="https://github.com/suhaas-livcd/AttendanceMarkingSystem/blob/master/Screenshots/Webp.net-gifmaker (1).gif" width="256" title="Login Activity">
 </p>
 
 ## Getting Started
