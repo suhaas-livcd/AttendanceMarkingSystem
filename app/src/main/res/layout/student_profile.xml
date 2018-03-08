@@ -52,5 +52,18 @@
         android:padding="20dp"
         android:text="Mentor" />
 
+    <include
+        android:id="@+id/dateDisplay"
+        layout="@layout/loadcurrentdate"></include>
+
+
+    <include
+        android:id="@+id/TimeSlotsDisplay"
+        layout="@layout/timeslots"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="28dip"
+        android:layout_gravity="center"></include>
+
 
 </LinearLayout>

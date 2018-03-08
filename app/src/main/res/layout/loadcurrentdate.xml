@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/calendarPreviousDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_navigate_before_black_48px"
+        android:tint="@color/notification_bar" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="24dip"
+        android:text="Sat, 10th Mar 2018"
+        android:gravity="center"
+        android:layout_marginLeft="40dip"
+        android:layout_marginRight="40dip" />
+
+    <ImageView
+        android:id="@+id/calendarNextDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_navigate_next_black_48px"
+        android:tint="@color/notification_bar" />
+</LinearLayout>
