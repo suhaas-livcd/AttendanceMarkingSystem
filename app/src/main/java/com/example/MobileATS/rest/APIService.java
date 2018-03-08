@@ -1,7 +1,6 @@
-package com.example.poonam1.loginpage.rest;
+package com.example.MobileATS.rest;
 
-import com.example.poonam1.loginpage.Beans.ListUserProfiles;
-import com.example.poonam1.loginpage.Beans.UserProfile;
+import com.example.MobileATS.Beans.ListUserProfiles;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
