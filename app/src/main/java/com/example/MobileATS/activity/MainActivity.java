@@ -12,10 +12,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.student_profile);
+        setContentView(R.layout.activity_main);
     }
 
-    /**
+    /**j
      * When the user click on the main screen. it goes to LoginPage
      *
      * @param view

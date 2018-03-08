@@ -11,26 +11,26 @@ import java.util.List;
 
 public class ListUserProfiles {
 
-    @SerializedName("response")
+    @SerializedName("loginStatus")
     @Expose
-    private String response;
+    private String mLoginResponse;
 
     @SerializedName("loginResponse")
-    private List<UserProfile> results;
+    private List<UserProfile> mUserProfileInfo;
 
-    public List<UserProfile> getResults() {
-        return results;
+    public List<UserProfile> getUserProfileInfo() {
+        return mUserProfileInfo;
     }
 
-    public void setResults(List<UserProfile> results) {
-        this.results = results;
+    public void setUserProfileInfo(List<UserProfile> userProfileInfo) {
+        this.mUserProfileInfo = userProfileInfo;
     }
 
-    public String getResponse() {
-        return response;
+    public String getLoginResponse() {
+        return mLoginResponse;
     }
 
-    public void setResponse(String response) {
-        this.response = response;
+    public void setLoginResponse(String loginResponse) {
+        this.mLoginResponse = loginResponse;
     }
 }

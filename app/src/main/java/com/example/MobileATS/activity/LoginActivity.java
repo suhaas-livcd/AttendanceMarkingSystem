@@ -1,5 +1,6 @@
 package com.example.MobileATS.activity;
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     private static final String mIsTeacher = "teacher";
     private static final String mIsStudent = "student";
     private static final String INVALID_CREDENTIALS = "Invalid Credentials";
+    private static final String GUEST_LOGIN = "Logging in as guest";
     private static final String INVALID_INPUT = "Invalid input";
     private String mLoginTypeIs = mIsStudent;  //DEFAULT Login is student
     private String mUsername = null, mUserpass = null;
@@ -36,6 +38,9 @@ public class LoginActivity extends AppCompatActivity {
     //RetroAPI
     private String mRetroResponse;
     private APIService mAPIService;
+    private static final String mIsSuccess = "success";
+    private static final String mIsError = "error";
+    private Intent mIntent;
 
 
     @Override
@@ -87,11 +92,7 @@ public class LoginActivity extends AppCompatActivity {
             mUserpass = mtextViewUserPass.getText().toString();
             if (mUsername != null && mUserpass != null) {
                 if (!(mUsername.isEmpty() || mUserpass.isEmpty())) {
-//                    new AuthenticateCredentials(this).execute(mUsername,mUserpass,mLoginTypeIs);
-
-                    //Retro Connection
                     sendPost(mUsername, mUserpass, mLoginTypeIs);
-
                 } else {
                     mPopMessage = INVALID_INPUT;
                     Toast.makeText(getApplicationContext(), mPopMessage, Toast.LENGTH_SHORT).show();
@@ -100,18 +101,43 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void sendPost(String mUsername, String mUserpass, String mLoginTypeIs) {
+    /**
+     * @param mUsername
+     * @param mUserpass
+     * @param mLoginTypeIs
+     */
+    public void sendPost(String mUsername, String mUserpass, final String mLoginTypeIs) {
         mAPIService.authenticateUser(mUsername, mUserpass, mLoginTypeIs).enqueue(new Callback<ListUserProfiles>() {
             @Override
             public void onResponse(Call<ListUserProfiles> call, Response<ListUserProfiles> response) {
                 if (response.isSuccessful()) {
-                    List<UserProfile> muserProfiles = response.body().getResults();
-                    if (muserProfiles.size() > 0) {
-                        showResponse(muserProfiles.get(0).toString());
-                        Log.i(mLOG_TAG, "post submitted to API." + muserProfiles.get(0).toString() + muserProfiles.get(0).getName());
+                    List<UserProfile> muserProfiles = response.body().getUserProfileInfo();
+                    String mLoginResponseIs = response.body().getLoginResponse();
+                    if (mLoginResponseIs.equals(mIsSuccess)) {
+                        switch (mLoginTypeIs) {
+                            case mIsStudent:
+                                mIntent = new Intent(getApplicationContext(), StudentActivity.class);
+                                //send response data via intent
+                                startActivity(mIntent);
+                                break;
+                            case mIsTeacher:
+                                mIntent = new Intent(getApplicationContext(), StaffActivity.class);
+                                startActivity(mIntent);
+                                break;
+                            default:
+                                mPopMessage = GUEST_LOGIN;
+                                Toast.makeText(getApplicationContext(), mPopMessage, Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Log.i(mLOG_TAG, "post submitted to API." + muserProfiles.get(0).toString());
+                        mPopMessage = INVALID_CREDENTIALS;
+                        Toast.makeText(getApplicationContext(), mPopMessage, Toast.LENGTH_SHORT).show();
                     }
+//                    if (muserProfiles.size() > 0) {
+//                        showResponse(muserProfiles.get(0).toString());
+//                        Log.i(mLOG_TAG, "post submitted to API." + muserProfiles.get(0).toString() + muserProfiles.get(0).getName());
+//                    } else {
+//                        Log.i(mLOG_TAG, "post submitted to API." + muserProfiles.get(0).toString());
+//                    }
                 }
             }
 
