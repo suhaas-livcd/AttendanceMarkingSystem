@@ -6,6 +6,8 @@
         <item name="colorPrimary">@color/notification_bar</item>
         <item name="colorPrimaryDark">@color/notification_bar_dark</item>
         <item name="colorAccent">@color/selectorRadio</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
 </resources>

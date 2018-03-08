@@ -1,11 +1,12 @@
-package com.example.poonam1.loginpage.rest;
+package com.example.MobileATS.rest;
 
 /**
  * Created by suhaas on 3/6/2018.
  */
 
 public class ApiUtils {
-    private ApiUtils() {}
+    private ApiUtils() {
+    }
 
     public static final String BASE_URL = "http://trackattendance.org/";
 

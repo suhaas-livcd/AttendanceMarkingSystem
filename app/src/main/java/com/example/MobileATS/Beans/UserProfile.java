@@ -1,4 +1,4 @@
-package com.example.poonam1.loginpage.Beans;
+package com.example.MobileATS.Beans;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -8,9 +8,7 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class UserProfile {
-    @SerializedName("response")
-    @Expose
-    private String response;
+
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -89,20 +87,12 @@ public class UserProfile {
         this.mentor = mentor;
     }
 
-    public String getResponse() {
-        return response;
-    }
-
-    public void setResponse(String response) {
-        this.response = response;
-    }
-
 
     @Override
     public String toString() {
-        return UserProfile.class.getSimpleName()+"{"+
-                "response : "+response+  "id : "+id+"username : "+username+"type : "+
-                type+"regNo : "+regNo+"name : "+name+"department : "+department+
-                "mentor : "+mentor+"}";
+        return UserProfile.class.getSimpleName() + "{" +
+                "id : " + id + "username : " + username + "type : " +
+                type + "regNo : " + regNo + "name : " + name + "department : " + department +
+                "mentor : " + mentor + "}";
     }
 }
