@@ -6,37 +6,81 @@
     android:gravity="center_horizontal">
 
     <ScrollView
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dip"
-                android:layout_marginTop="10dip"
-                android:padding="5dip"
-                android:text="1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="10dip"
+                    android:padding="5dip"
+                    android:text="1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="10dip"
+                    android:padding="5dip"
+                    android:text="14FSP2018" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dip"
+                    android:layout_marginTop="10dip"
+                    android:padding="5dip"
+                    android:text="Batch - 2" />
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:src="@drawable/ic_assignment_black_24dp" />
+
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:src="@drawable/ic_alarm_on_black_24dp" />
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:src="@drawable/ic_cake_black_24dp" />
+
+
+                <ImageView
+                    android:layout_width="30dip"
+                    android:layout_height="30dip"
+                    android:src="@drawable/ic_more_vert_black_24dp" />
+            </LinearLayout>
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -48,11 +92,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -64,11 +108,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -80,11 +124,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -96,11 +140,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -112,11 +156,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -128,11 +172,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -144,11 +188,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -160,11 +204,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -176,11 +220,11 @@
 
 
             <View
-                android:layout_width="304dp"
+                android:layout_width="match_parent"
                 android:layout_height="2dip"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dip"
-                android:background="#A9A9A9"></View>
+                android:background="#A9A9A9" />
             <!-- Content here -->
         </LinearLayout>
     </ScrollView>

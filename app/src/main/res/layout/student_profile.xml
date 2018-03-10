@@ -1,60 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-     android:layout_height="match_parent"
-     android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dip"
-        android:background="#34495e"
-        android:fontFamily="serif-monospace"
-        android:paddingTop="10dip"
-        android:text="Zahir"
-        android:textAlignment="center"
-        android:textColor="#ecf0f1"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1" />
-
-    <View
-        android:layout_width="200dip"
-        android:layout_height="1dip"
-        android:layout_gravity="center"
-        android:background="#A9A9A9"></View>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#34495e"
-        android:fontFamily="serif-monospace"
-        android:text="UR13CS001"
-        android:textAlignment="center"
-        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-        android:textColor="#7f8c8d" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="#fff"
-        android:clickable="true"
-        android:elevation="4dp"
-        android:padding="20dp"
-        android:text="Computer Science IV SEM" />
-
-
 
     <include
         android:id="@+id/dateDisplay"
-        layout="@layout/loadcurrentdate"></include>
+        layout="@layout/student_profile_title_info" />
 
+    <include
+        android:id="@+id/dateDisplay"
+        layout="@layout/student_profile_default_info" />
+
+    <include
+        android:id="@+id/dateDisplay"
+        layout="@layout/loadcurrentdate" />
 
     <include
         android:id="@+id/TimeSlotsDisplay"
         layout="@layout/timeslots"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginLeft="28dip"
-        android:layout_gravity="center"></include>
-
-
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 </LinearLayout>
