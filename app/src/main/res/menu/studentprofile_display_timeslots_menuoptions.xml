@@ -2,17 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content">
-    <item
-        android:id="@+id/studentProfile_timeSplot_MenuOptions"
-        android:title="Menu">
-        <!-- "file" submenu -->
-        <menu>
             <item
                 android:id="@+id/create_new"
-                android:title="Create New" />
+                android:title="Assignment" />
             <item
-                android:id="@+id/open"
-                android:title="Share" />
-        </menu>
-    </item>
+                android:id="@+id/Reminder"
+                android:title="Create Reminder" />
 </menu>

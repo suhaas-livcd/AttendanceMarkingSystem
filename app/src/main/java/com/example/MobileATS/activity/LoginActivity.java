@@ -5,8 +5,6 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -54,16 +52,8 @@ public class LoginActivity extends AppCompatActivity {
 
         //Retro
         mAPIService = ApiUtils.getAPIService();
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        Log.d(mLOG_TAG, "----------> onCreateOptionsMenu");
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.studentprofile_display_timeslots_menuoptions, menu);
-        return super.onCreateOptionsMenu(menu);
     }
-
 
     /**
      * To swap the images of the teacher and the student.
@@ -205,5 +195,4 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-
 }
