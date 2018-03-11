@@ -8,4 +8,7 @@
             <item
                 android:id="@+id/Reminder"
                 android:title="Create Reminder" />
+    <item
+        android:id="@+id/Notification"
+        android:title="Notification" />
 </menu>
