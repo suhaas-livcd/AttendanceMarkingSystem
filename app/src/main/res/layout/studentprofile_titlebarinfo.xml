@@ -46,12 +46,16 @@
             android:layout_weight="0.4" />
 
         <ImageView
+            android:id="@+id/studentProfile_TitleMenuOptionButton"
             android:layout_width="30dip"
             android:layout_height="30dip"
             android:src="@drawable/ic_more_vert_black_24dp"
             android:tint="#ecf0f1"
             android:layout_gravity="center"
-            android:layout_weight="0.1" />
+            android:layout_weight="0.1"
+            android:onClick="studentProfile_OpenTitleMenuOption"
+            android:clickable="true"
+            android:focusable="true" />
 
     </LinearLayout>
 

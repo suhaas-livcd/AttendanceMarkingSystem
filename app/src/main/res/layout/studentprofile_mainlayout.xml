@@ -6,11 +6,11 @@
 
     <include
         android:id="@+id/dateDisplay"
-        layout="@layout/student_profile_title_info" />
+        layout="@layout/studentprofile_titlebarinfo" />
 
     <include
         android:id="@+id/dateDisplay"
-        layout="@layout/student_profile_default_info" />
+        layout="@layout/studentprofile_default_textinfo" />
 
     <include
         android:id="@+id/dateDisplay"
@@ -18,7 +18,7 @@
 
     <include
         android:id="@+id/TimeSlotsDisplay"
-        layout="@layout/timeslots"
+        layout="@layout/studentprofile_diplay_timeslots"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
