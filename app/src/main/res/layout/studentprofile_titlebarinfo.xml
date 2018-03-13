@@ -53,7 +53,7 @@
             android:tint="#ecf0f1"
             android:layout_gravity="center"
             android:layout_weight="0.1"
-            android:onClick="studentProfile_OpenTitleMenuOption"
+            android:onClick="studentProfile_OpenTitleBarMenuOption"
             android:clickable="true"
             android:focusable="true" />
 

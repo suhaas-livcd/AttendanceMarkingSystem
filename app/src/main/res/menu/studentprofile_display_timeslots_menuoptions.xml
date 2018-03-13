@@ -11,4 +11,26 @@
     <item
         android:id="@+id/Notification"
         android:title="Notification" />
+    <item
+        android:id="@+id/contactSubjectStaff"
+        android:title="Contact">
+        <!-- "Contact" submenu -->
+        <menu>
+            <item
+                android:id="@+id/callSubjectStaff"
+                android:title="Call" />
+            <item
+                android:id="@+id/messageSubjectStaff"
+                android:title="Message" />
+            <item
+                android:id="@+id/emailSubjectStaff"
+                android:title="Email" />
+            <item
+                android:id="@+id/saveSubjectStaffContact"
+                android:title="Save Contact" />
+            <item
+                android:id="@+id/sendSubjectStaffPostMessage"
+                android:title="Send Post" />
+        </menu>
+    </item>
 </menu>

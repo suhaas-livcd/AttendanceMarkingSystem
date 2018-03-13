@@ -195,4 +195,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void onBackPressed() {
+        mPopMessage = "Back button disabled";
+        Toast.makeText(getApplicationContext(), mPopMessage, Toast.LENGTH_SHORT).show();
+    }
 }

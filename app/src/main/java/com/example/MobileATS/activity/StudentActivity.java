@@ -18,6 +18,11 @@ public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMe
 
     private String LOG_TAG = StudentActivity.class.getSimpleName();
 
+    /**
+     * Calling oncreate when the activity launches
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +34,7 @@ public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMe
      *
      * @param v
      */
-    public void studentProfile_OpenTitleMenuOption(View v) {
+    public void studentProfile_OpenStudentBodyMenuOption(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.studentprofile_display_timeslots_menuoptions, popup.getMenu());
@@ -72,8 +77,63 @@ public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMe
 
                 startActivity(intent);
                 return true;
+
+            case R.id.callMentor:
+                return true;
+
+            case R.id.messageMentor:
+                return true;
+
+
+            case R.id.saveMentorContact:
+                return true;
+
+            case R.id.emailMentor:
+                return true;
+
+            /**
+             * Logout Menthod from student activiyt
+             * Better to use braodcast ! to be changed just for testing purpose
+             */
+            case R.id.logout_StudentProfile:
+                Intent intentToStartLoginActivity = new Intent(this, LoginActivity.class);
+                startActivity(intentToStartLoginActivity);
+                finish();
+                return true;
+
+            case R.id.callSubjectStaff:
+                return true;
+
+            case R.id.messageSubjectStaff:
+                return true;
+
+            case R.id.emailSubjectStaff:
+                return true;
+
+            case R.id.saveSubjectStaffContact:
+                return true;
+
+            case R.id.sendSubjectStaffPostMessage:
+                return true;
+
             default:
                 return false;
         }
+    }
+
+    public void studentProfile_OpenMentorContactMenuOption(View view) {
+        PopupMenu popup = new PopupMenu(this, view);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.studentprofile_display_mentorcontact_menuoptions, popup.getMenu());
+        popup.setOnMenuItemClickListener(this);
+        popup.show();
+    }
+
+    public void studentProfile_OpenTitleBarMenuOption(View view) {
+        PopupMenu popup = new PopupMenu(this, view);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.studentprofile_titlebar_menuoptions, popup.getMenu());
+        popup.setOnMenuItemClickListener(this);
+        popup.show();
     }
 }

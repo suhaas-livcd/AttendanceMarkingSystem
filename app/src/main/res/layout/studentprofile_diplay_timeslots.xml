@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center_horizontal">
+    <!--
+        <include layout="@layout/current_time_bar" />-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -71,7 +73,7 @@
                     android:layout_gravity="left"
                     android:src="@drawable/ic_more_vert_black_24dp"
                     android:layout_weight="0.2"
-                    android:onClick="studentProfile_OpenTitleMenuOption"
+                    android:onClick="studentProfile_OpenStudentBodyMenuOption"
                     android:clickable="true"
                     android:focusable="true" />
 

@@ -45,7 +45,10 @@
             android:layout_height="wrap_content"
             android:padding="2dip"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
-            android:text="Anne Green" />
+            android:text="Anne Green"
+            android:onClick="studentProfile_OpenMentorContactMenuOption"
+            android:textColor="@color/selectorRadio" />
+
     </LinearLayout>
 
 </LinearLayout>
