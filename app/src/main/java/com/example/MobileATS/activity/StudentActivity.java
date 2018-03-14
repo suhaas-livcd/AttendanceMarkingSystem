@@ -1,5 +1,6 @@
 package com.example.MobileATS.activity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.CalendarContract;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.PopupMenu;
 
 import com.example.MobileATS.R;
@@ -17,6 +19,7 @@ import java.util.Calendar;
 public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
 
     private String LOG_TAG = StudentActivity.class.getSimpleName();
+    private Dialog mdialogContact;
 
     /**
      * Calling oncreate when the activity launches
@@ -27,6 +30,7 @@ public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.studentprofile_mainlayout);
+
     }
 
     /**
@@ -78,19 +82,6 @@ public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMe
                 startActivity(intent);
                 return true;
 
-            case R.id.callMentor:
-                return true;
-
-            case R.id.messageMentor:
-                return true;
-
-
-            case R.id.saveMentorContact:
-                return true;
-
-            case R.id.emailMentor:
-                return true;
-
             /**
              * Logout Menthod from student activiyt
              * Better to use braodcast ! to be changed just for testing purpose
@@ -101,19 +92,39 @@ public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMe
                 finish();
                 return true;
 
-            case R.id.callSubjectStaff:
+            case R.id.contactSubjectStaff:
+                mdialogContact = new Dialog(this);
+                mdialogContact.setContentView(R.layout.studentprofile_contactlayout);
+                mdialogContact.setTitle("Contact");
+
+                Button dialogContactButtonOK = (Button) findViewById(R.id.ContactButtonOK);
+//                dialogContactButtonOK.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+//                        mdialogContact.dismiss();
+//                    }
+//                });
+                mdialogContact.show();
+//                DisplayMetrics metrics = getResources().getDisplayMetrics();
+//                int width = metrics.widthPixels;
+//                int height = metrics.heightPixels;
+//                mdialogContact.getWindow().setLayout((6 * width)/7, LayoutParams.WRAP_CONTENT);
+
+//                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//                // Get the layout inflater
+//                LayoutInflater inflater = getLayoutInflater();
+//
+//                // Inflate and set the layout for the dialog
+//                // Pass null as the parent view because its going in the dialog layout
+//                builder.setView(inflater.inflate(R.layout.studentprofile_contactlayout, null));
+//                        // Add action buttons
+//
+//                builder.create();
+
                 return true;
 
-            case R.id.messageSubjectStaff:
-                return true;
+            case R.id.contactMentor:
 
-            case R.id.emailSubjectStaff:
-                return true;
-
-            case R.id.saveSubjectStaffContact:
-                return true;
-
-            case R.id.sendSubjectStaffPostMessage:
                 return true;
 
             default:

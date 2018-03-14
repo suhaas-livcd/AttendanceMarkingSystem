@@ -1,5 +1,6 @@
 package com.example.MobileATS.activity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -35,12 +36,14 @@ public class LoginActivity extends AppCompatActivity {
     private String mUsername = null, mUserpass = null;
     private String mLOG_TAG = LoginActivity.class.getSimpleName();
     private String mPopMessage;
+
     //RetroAPI
     private String mRetroResponse;
     private APIService mAPIService;
     private static final String mIsSuccess = "success";
     private static final String mIsError = "error";
     private Intent mIntent;
+    private ProgressDialog mProgress;
 
 
     @Override
@@ -49,6 +52,14 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         teacherView = findViewById(R.id.login_teacher);
         studentView = findViewById(R.id.login_student);
+        //Progress
+        mProgress = new ProgressDialog(this);
+        mProgress.setTitle("Processing...");
+        mProgress.setMessage("Please wait...");
+        mProgress.setCancelable(false);
+        mProgress.setIndeterminate(true);
+        mProgress.setCanceledOnTouchOutside(true);
+        mProgress.setCancelable(true);
 
         //Retro
         mAPIService = ApiUtils.getAPIService();
@@ -92,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
             mUserpass = mtextViewUserPass.getText().toString();
             if (mUsername != null && mUserpass != null) {
                 if (!(mUsername.isEmpty() || mUserpass.isEmpty())) {
+                    mProgress.show();
                     sendPost(mUsername, mUserpass, mLoginTypeIs);
                 } else {
                     mPopMessage = INVALID_INPUT;
@@ -110,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
         mAPIService.authenticateUser(mUsername, mUserpass, mLoginTypeIs).enqueue(new Callback<ListUserProfiles>() {
             @Override
             public void onResponse(Call<ListUserProfiles> call, Response<ListUserProfiles> response) {
+                mProgress.dismiss();
                 if (response.isSuccessful()) {
                     List<UserProfile> muserProfiles = response.body().getUserProfileInfo();
                     String mLoginResponseIs = response.body().getLoginResponse();
@@ -140,6 +153,7 @@ public class LoginActivity extends AppCompatActivity {
 //                    }
                 }
             }
+
 
             @Override
             public void onFailure(Call<ListUserProfiles> call, Throwable t) {
@@ -196,8 +210,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    public void onBackPressed() {
-        mPopMessage = "Back button disabled";
-        Toast.makeText(getApplicationContext(), mPopMessage, Toast.LENGTH_SHORT).show();
-    }
+//    public void onBackPressed() {
+//        mPopMessage = "Back button disabled";
+//        Toast.makeText(getApplicationContext(), mPopMessage, Toast.LENGTH_SHORT).show();
+//    }
 }

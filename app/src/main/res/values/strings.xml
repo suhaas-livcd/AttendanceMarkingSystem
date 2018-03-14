@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MobileATS</string>
+    <string name="StaffContactName">Zahir</string>
+    <string name="StaffContactNumber">+917708483438</string>
+    <string name="TeacherContactEmail">zahir@gmail.com</string>
+    <string name="ContactDialogButton">Ok</string>
 </resources>

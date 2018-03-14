@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:layout_gravity="left">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dip"
+        android:background="#A9A9A9" />
+
+    <!--<ImageView
+        android:layout_width="100dip"
+        android:layout_height="100dip"
+        android:src="@drawable/ic_avatarteacher"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/StaffContactName"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:fontFamily="serif-monospace"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+        android:textColor="@color/cardview_dark_background"
+        android:layout_weight="0.4" />-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="10dip"
+        android:background="#A9A9A9" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip"
+            android:fontFamily="serif-monospace"
+            android:layout_gravity="center"
+            android:text="@string/StaffContactNumber"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+            android:textColor="@color/cardview_dark_background"
+            android:autoLink="phone" />
+
+        <ImageView
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_local_phone_black_24dp"
+            android:tint="#2d3436" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dip"
+        android:layout_marginLeft="10dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dip"
+            android:fontFamily="serif-monospace"
+            android:layout_gravity="left"
+            android:text="@string/TeacherContactEmail"
+            android:textAlignment="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Display1"
+            android:textColor="@color/cardview_dark_background"
+            android:autoLink="email" />
+
+        <ImageView
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_email_black_24dp"
+            android:tint="#2d3436" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ContactButtonOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/ContactDialogButton" />
+
+</LinearLayout>
