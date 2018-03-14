@@ -4,4 +4,14 @@
     <string name="StaffContactNumber">+917708483438</string>
     <string name="TeacherContactEmail">zahir@gmail.com</string>
     <string name="ContactDialogButton">Ok</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>

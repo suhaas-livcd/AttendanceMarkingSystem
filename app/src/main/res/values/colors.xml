@@ -8,4 +8,5 @@
     <color name="selectorRadio">#1abc9c</color>
     <color name="notification_bar">#34495e</color>
     <color name="notification_bar_dark">#2c3e50</color>
+    <color name="transparent_black">#80000000</color>
 </resources>

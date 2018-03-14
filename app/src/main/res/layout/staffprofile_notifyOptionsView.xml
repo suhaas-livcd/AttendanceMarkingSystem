@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="Student"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:textColor="#7f8c8d" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:background="#A9A9A9"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="30dip" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/imageViewLogout"
+            android:layout_width="225dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="serif-monospace"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_margin="20dip"
+            android:background="@android:color/transparent"
+            android:drawablePadding="10dip"
+            android:drawableTop="@drawable/ic_notifications_active_black_24dp"
+            android:text="Notify"
+            android:layout_weight="0.3" />
+
+        <Button
+            android:id="@+id/imageTrackStudent"
+            android:layout_width="225dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="serif-monospace"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_margin="20dip"
+            android:background="@android:color/transparent"
+            android:drawablePadding="10dip"
+            android:drawableTop="@drawable/ic_alarm_on_black_24dp"
+            android:text="Alert"
+            android:layout_weight="0.3" />
+
+        <Button
+            android:id="@+id/imageSubjectOverall"
+            android:layout_width="225dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:fontFamily="serif-monospace"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+            android:layout_margin="20dip"
+            android:background="@android:color/transparent"
+            android:drawablePadding="10dip"
+            android:drawableTop="@drawable/ic_assignment_black_24dp"
+            android:text="Assign"
+            android:layout_weight="0.3" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
