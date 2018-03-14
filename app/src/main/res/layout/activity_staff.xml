@@ -10,11 +10,11 @@
 
     <include
         android:id="@+id/StaffProfile_attendaceView"
-        layout="@layout/staffprofile_attendanceOptionsView" />
+        layout="@layout/staffprofile_attendanceoptionsview" />
 
     <include
         android:id="@+id/StaffProfile_notifyView"
-        layout="@layout/staffprofile_notifyOptionsView" />
+        layout="@layout/staffprofile_notifyoptionsview" />
 
 
 </LinearLayout>
