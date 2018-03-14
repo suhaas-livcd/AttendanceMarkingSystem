@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.PopupMenu;
 
 import com.example.MobileATS.R;
@@ -97,29 +96,16 @@ public class StudentActivity extends AppCompatActivity implements PopupMenu.OnMe
                 mdialogContact.setContentView(R.layout.studentprofile_contactlayout);
                 mdialogContact.setTitle("Contact");
 
-                Button dialogContactButtonOK = (Button) findViewById(R.id.ContactButtonOK);
+
+                mdialogContact.show();
+
+//                Button dialogContactButtonOK = (Button) findViewById(R.id.ContactButtonOK);
 //                dialogContactButtonOK.setOnClickListener(new View.OnClickListener() {
 //                    @Override
 //                    public void onClick(View view) {
 //                        mdialogContact.dismiss();
 //                    }
 //                });
-                mdialogContact.show();
-//                DisplayMetrics metrics = getResources().getDisplayMetrics();
-//                int width = metrics.widthPixels;
-//                int height = metrics.heightPixels;
-//                mdialogContact.getWindow().setLayout((6 * width)/7, LayoutParams.WRAP_CONTENT);
-
-//                AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//                // Get the layout inflater
-//                LayoutInflater inflater = getLayoutInflater();
-//
-//                // Inflate and set the layout for the dialog
-//                // Pass null as the parent view because its going in the dialog layout
-//                builder.setView(inflater.inflate(R.layout.studentprofile_contactlayout, null));
-//                        // Add action buttons
-//
-//                builder.create();
 
                 return true;
 
